@@ -1,17 +1,22 @@
-import Header from './components/Cabecalho'
-import Hero from './components/Hero'
-import ListaVagas from './containers/ListaVagas'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { GlobalStyle } from './styles'
+
+import Home from './pages/Home'
 
 import './global.css'
+
+const rotas = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  }
+])
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <div className="container">
-        <ListaVagas />
-      </div>
+      <GlobalStyle />
+      <RouterProvider router={rotas} />
     </>
   )
 }
